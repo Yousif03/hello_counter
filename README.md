@@ -46,3 +46,10 @@ kubectl apply -f k8s/30-frontend.yaml
 
 # forward ports
 kubectl -n hello port-forward svc/frontend 8080:3000
+
+
+# wait for pods to be Ready, then browse:
+# Docker Desktop K8s: http://localhost:30080/hello/<name>
+# Or port-forward:
+kubectl -n hello port-forward svc/frontend 8080:3000
+# then go to http://localhost:8080/hello/<name>
